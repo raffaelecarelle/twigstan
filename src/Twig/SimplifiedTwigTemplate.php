@@ -6,12 +6,14 @@ namespace TwigStan\Twig;
 
 use Stringable;
 use Twig\Environment;
+use Twig\Node\MacroNode;
 use Twig\Source;
 
 abstract class SimplifiedTwigTemplate
 {
     protected Source $source;
     protected Environment $env;
+    protected array $macros = [];
 
     /**
      * @param array<mixed> $context

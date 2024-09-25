@@ -107,6 +107,15 @@ final readonly class MetadataAnalyzer
             }
         }
 
+        $macros = [];
+        /**
+         * @var BlockNode $block
+         */
+        foreach ($template->getNode('macros') as $macro) {
+            $macroName = $macro->getAttribute('name');
+            $macros[] = $macroName;
+        }
+
         return new Metadata(
             $template->getSourceContext()->getName(),
             $this->twig->getTemplateClass($template->getSourceContext()->getName()),
@@ -116,6 +125,7 @@ final readonly class MetadataAnalyzer
             $traits,
             $blocks,
             $parentBlocks,
+            $macros
         );
     }
 

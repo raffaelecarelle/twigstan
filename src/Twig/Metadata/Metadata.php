@@ -21,6 +21,7 @@ final readonly class Metadata
         public array $traits,
         public array $blocks,
         public array $parentBlocks,
+        public array $macros,
     ) {}
 
 
